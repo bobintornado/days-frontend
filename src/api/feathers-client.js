@@ -9,7 +9,7 @@ import store from '@/store/'
 import rx from 'feathers-reactive'
 import RxJS from 'rxjs'
 
-const socket = io('http://localhost:3030', {transports: ['websocket']})
+const socket = io('http://localhost:3000', {transports: ['websocket']})
 
 const feathersClient = feathers()
   .configure(hooks())
@@ -24,9 +24,6 @@ const feathersClient = feathers()
   }))
 
 feathersClient.service('/users')
-feathersClient.service('/messages')
-// feathersClient.service('/todos').vuex({idField: '_id'})
-// feathersClient.service('/deeply/nested/names')
-// feathersClient.service('/some/explicit/namespace').vuex({name: '/explicit/namespace'})
+feathersClient.service('/posts').vuex({idField: '_id'})
 
 export default feathersClient

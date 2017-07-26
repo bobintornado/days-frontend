@@ -12,6 +12,6 @@ export default new Router({
     { path: '', name: 'Home', component: Home },
     { path: '/login', name: 'Login', component: Login },
     { path: '/signup', name: 'Signup', component: Signup },
-    { path: '/chat', name: 'Chat', component: Chat }
+    { path: '/app', name: 'App', component: App }
   ]
 })
