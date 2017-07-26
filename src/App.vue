@@ -17,9 +17,9 @@ export default {
     }
   },
   watch: {
-    // When the user is set, redirect to the Chat page.
+    // When the user is set, redirect to the Records.
     user (newVal) {
-      this.$router.replace({name: 'Chat'})
+      this.$router.replace({name: 'Records'})
     }
   },
   mounted () {
