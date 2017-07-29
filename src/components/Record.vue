@@ -4,14 +4,17 @@
       {{ formattedDate }}
     </div>
     <div class="flex flex-column col col-10">
-      <textarea v-model="record.content"></textarea>
+      <!-- <textarea v-model="record.content"></textarea> -->
+      <medium-editor :text='record.content' :options='{ disableReturn: false }' custom-tag='h2' v-on:edit='applyTextEdit' :reuse-medium-editor-instance="false">
+      </medium-editor>
     </div>
   </div>
 </template>
 
 <script>
 import { format } from 'date-fns/esm'
-import autosize from 'autosize'
+// import autosize from 'autosize'
+import editor from 'vue2-medium-editor'
 
 export default {
   props: {
@@ -23,14 +26,23 @@ export default {
       return format(this.record.createdAt, 'MMM Do, YYYY')
     }
   },
-  mounted () {
-    autosize(this.$el.querySelector('textarea'))
-  },
-  watch: {
-    'record.content': function (content) {
+  methods: {
+    applyTextEdit (operation) {
+      let content = operation.event.srcElement.innerHTML
       this.patchRecord([this.record._id, { ...this.record, content: content }])
-      autosize(this.$el.querySelector('textarea'))
     }
+  },
+  components: {
+    'medium-editor': editor
   }
+  // mounted () {
+  //   autosize(this.$el.querySelector('textarea'))
+  // }
+  // watch: {
+  //   'record.content': function (content) {
+  //     this.patchRecord([this.record._id, { ...this.record, content: content }])
+  //     autosize(this.$el.querySelector('textarea'))
+  //   }
+  // }
 }
 </script>
