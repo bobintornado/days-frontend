@@ -35,14 +35,5 @@ export default {
   components: {
     'medium-editor': editor
   }
-  // mounted () {
-  //   autosize(this.$el.querySelector('textarea'))
-  // }
-  // watch: {
-  //   'record.content': function (content) {
-  //     this.patchRecord([this.record._id, { ...this.record, content: content }])
-  //     autosize(this.$el.querySelector('textarea'))
-  //   }
-  // }
 }
 </script>
