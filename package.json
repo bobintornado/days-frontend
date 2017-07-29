@@ -14,6 +14,7 @@
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
   },
   "dependencies": {
+    "autosize": "^4.0.0",
     "babel-polyfill": "^6.23.0",
     "date-fns": "^2.0.0-alpha.1",
     "deep-assign": "^2.0.0",
@@ -21,6 +22,8 @@
     "feathers-authentication-client": "^0.3.2",
     "feathers-authentication-popups": "^0.1.2",
     "feathers-hooks": "^2.0.1",
+    "feathers-offline-publication": "0.0.2",
+    "feathers-offline-realtime": "^0.1.2",
     "feathers-reactive": "^0.4.1",
     "feathers-socketio": "^2.0.0",
     "feathers-vuex": "^0.7.0",

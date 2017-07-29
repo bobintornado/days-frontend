@@ -1,3 +1,7 @@
+# Next Step
+
+Re-write vuex store parts to make it offline-first
+
 # Build Setup
 
 ``` bash

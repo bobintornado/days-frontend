@@ -24,6 +24,4 @@ const feathersClient = feathers()
   }))
 
 feathersClient.service('/users')
-feathersClient.service('/posts').vuex({idField: '_id'})
-
-export default feathersClient
+feathersClient.service('/records')

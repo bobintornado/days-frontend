@@ -6,7 +6,6 @@
 
 <script>
 import 'getbase/dist/css/styles.css'
-import './styles/chat.css'
 
 export default {
   name: 'app',
@@ -19,7 +18,7 @@ export default {
   watch: {
     // When the user is set, redirect to the Records.
     user (newVal) {
-      this.$router.replace({name: 'Records'})
+      this.$router.replace({name: 'Main'})
     }
   },
   mounted () {
