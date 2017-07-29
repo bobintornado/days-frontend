@@ -5,7 +5,7 @@
         <h1>Infinite Days</h1> 
       </div>
     </header>
-      <div class="flex flex-row flex-1 clear" v-if="user">  
+      <div class="flex flex-row flex-1 clear" v-if="user" >  
         <record-list :records="records.data"
           :findRecords="findRecords"
           :createRecord="createRecord"

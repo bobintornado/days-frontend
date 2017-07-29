@@ -1,6 +1,5 @@
 <template>
   <div id='list' class="flex flex-column col col-10">
-    <!-- <ComposeMessage :createRecord="createRecord" /> -->
     <main class="chat flex-1 clear">
       <single-record v-for="record in records" :key="record._id" :record="record" :patchRecord="patchRecord" v-cloak />
     </main>
@@ -16,7 +15,8 @@ export default {
   data () {
     return {
       // TODO: Fix the placeholder
-      placeholder: 'PLACEHOLDER'
+      placeholder: 'PLACEHOLDER',
+      first_load: true
     }
   },
   props: {
@@ -28,6 +28,12 @@ export default {
   components: {
     ComposeMessage,
     SingleRecord
+  },
+  updated () {
+    if (this.first_load) {
+      document.body.scrollTop = document.body.scrollHeight
+      this.first_load = false
+    }
   }
 }
 </script>

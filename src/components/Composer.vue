@@ -1,7 +1,6 @@
 <template>
   <form class="flex flex-row flex-space-between" id="send-message" v-on:submit.prevent>
-    <input type="text" name="content" class="flex flex-1" v-model="newMessage">
-    <button class="button-primary" type="submit" @click="addMessage">Send</button>
+    <button class="button-primary" type="submit" @click="addMessage">load early days</button>
   </form>
 </template>
 
@@ -18,11 +17,13 @@ export default {
   },
   methods: {
     addMessage () {
-      // Create a new message and then clear the input field
-      this.createRecord({content: this.newMessage}).then(this.clearMessage)
-    },
-    clearMessage () {
-      this.newMessage = ''
+      this.$store.dispatch('records/find', {
+        query: {
+          $sort: {createdAt: -1},
+          $limit: 25,
+          $skip: this.$store.state.records.ids.length
+        }
+      })
     }
   }
 }
