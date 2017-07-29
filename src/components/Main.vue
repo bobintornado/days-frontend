@@ -1,16 +1,16 @@
 <template>
-  <main id="chat" class="flex flex-column">
+  <main id="container" class="flex flex-column">
     <header class="title-bar flex flex-row flex-center">
       <div class="title-wrapper block center-element">
         <h1>Infinite Days</h1> 
       </div>
     </header>
-    <div class="flex flex-row flex-1 clear" v-if="user">  
-      <record-list :records="records.data"
-        :findRecords="findRecords"
-        :createRecord="createRecord"
-        :patchRecord="patchRecord"/>
-    </div>
+      <div class="flex flex-row flex-1 clear" v-if="user">  
+        <record-list :records="records.data"
+          :findRecords="findRecords"
+          :createRecord="createRecord"
+          :patchRecord="patchRecord"/>
+      </div>
   </main>
 </template>
 
