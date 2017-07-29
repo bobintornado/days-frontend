@@ -3,19 +3,19 @@
     <main class="chat flex-1 clear">
       <single-record v-for="record in records" :key="record._id" :record="record" :patchRecord="patchRecord" v-cloak />
     </main>
+    <record-composer :createRecord="createRecord"/>
   </div>
+  
 </template>
 
 <script>
 import SingleRecord from './Record.vue'
-import ComposeMessage from './Composer.vue'
+import RecordComposer from './Composer.vue'
 
 export default {
   name: 'record-list',
   data () {
     return {
-      // TODO: Fix the placeholder
-      placeholder: 'PLACEHOLDER',
       first_load: true
     }
   },
@@ -26,7 +26,7 @@ export default {
     patchRecord: Function
   },
   components: {
-    ComposeMessage,
+    RecordComposer,
     SingleRecord
   },
   updated () {

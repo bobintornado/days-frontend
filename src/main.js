@@ -12,5 +12,30 @@ new Vue({
   router,
   store,
   template: '<App/>',
-  components: { App }
+  components: { App },
+  methods: {
+    handleScroll (e) {
+      if (document.querySelector('body').scrollTop < 5) {
+        // this.lastest = this.$store.state.records.ids[0]
+
+        this.$store.dispatch('records/find', {
+          query: {
+            $sort: {createdAt: -1},
+            $limit: 25,
+            $skip: this.$store.state.records.ids.length
+          }
+        })
+
+        // slack style scrolling is great
+        // will improve on that
+        window.scrollBy(0, 50)
+      }
+    }
+  },
+  created: function () {
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  destroyed: function () {
+    window.removeEventListener('scroll', this.handleScroll)
+  }
 })

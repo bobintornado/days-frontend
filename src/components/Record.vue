@@ -1,5 +1,5 @@
 <template>
-  <div class="record flex flex-row">
+  <div class="record flex flex-row" :id="record._id">
     <div class="flex flex-column col col-2">
       {{ formattedDate }}
     </div>

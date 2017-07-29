@@ -21,7 +21,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 
 body, form, fieldset, legend, input, select, textarea, button {
   margin: 0; 
-  margin-bottom: 300px;
+  margin-bottom: 10vh;
 }
 
 audio, canvas, progress, video {
