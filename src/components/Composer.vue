@@ -12,7 +12,7 @@ export default {
   },
   methods: {
     addRecord () {
-      this.createRecord({content: 'new day!'})
+      this.createRecord({content: 'new day!', createdAt: new Date()})
     }
   }
 }
