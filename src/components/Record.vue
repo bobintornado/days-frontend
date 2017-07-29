@@ -20,7 +20,7 @@ export default {
   },
   computed: {
     formattedDate () {
-      return format(this.record.createdAt, 'MMM Do')
+      return format(this.record.createdAt, 'MMM Do, YYYY')
     }
   },
   mounted () {
@@ -28,7 +28,7 @@ export default {
   },
   watch: {
     'record.content': function (content) {
-      this.patchRecord([this.record._id, {content: content}])
+      this.patchRecord([this.record._id, { ...this.record, content: content }])
       autosize(this.$el.querySelector('textarea'))
     }
   }
