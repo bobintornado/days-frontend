@@ -1,6 +1,7 @@
-# Next Step
+# Top Tasks
 
-Re-write vuex store parts to make it offline-first
+1. Make editing feels good. (now it's bad) not as smooth as google docs.
+2. Marketing
 
 # Build Setup
 

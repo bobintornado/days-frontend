@@ -20,8 +20,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   display: block; }
 
 body, form, fieldset, legend, input, select, textarea, button {
-  margin: 0; 
-  margin-bottom: 10vh;
+  margin: 0;
 }
 
 audio, canvas, progress, video {

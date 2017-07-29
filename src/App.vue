@@ -6,7 +6,7 @@
 
 <script>
 import 'getbase/dist/css/styles.css'
-import '@/styles/base.css'
+import '@/styles/days.css'
 
 export default {
   name: 'app',

@@ -1,9 +1,12 @@
 <template>
-  <form class="flex flex-row flex-space-between" id="send-message" v-on:submit.prevent>
-    <button class="button-primary" type="submit" @click="addRecord">Record Today!</button>
-    <button class="button-primary" type="submit" @click="logout">Log out</button>
-    <span>Login in as: {{ user.email }} </span>
-  </form>
+  <div class='footerActions'>
+    <form class="flex flex-row" id="send-message" v-on:submit.prevent>
+      <button class="button-primary" type="submit" @click="addRecord">Pick A Day</button>
+      <button class="button-primary" type="submit" @click="addRecord">Record Today!</button>
+      <button class="button-primary" type="submit" @click="logout">Log out</button>
+      <caption> Current User {{ user.email }} </caption>
+    </form>
+  </div>
 </template>
 
 <script>
@@ -29,3 +32,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+
+.footerActions {
+  margin-bottom: 20px;
+}
+</style>

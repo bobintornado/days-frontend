@@ -1,11 +1,9 @@
 <template>
   <main class="home container">
     <div class="row">
-      <div class="col-12 col-8-tablet push-2-tablet text-center">
-        <img class="logo center-item"
-          src="http://feathersjs.com/img/feathers-logo-wide.png"
-          alt="Feathers Logo">
-        <h3 class="title">Chat</h3>
+      <div class="text-center">
+        <h1 class="title">Infinite Days</h1>
+        <span>Note down days and infinitely scrolling back</span>
       </div>
     </div>
 
@@ -24,7 +22,6 @@
         </div>
       </div>
     </div>
-
   </main>
 </template>
 
@@ -36,6 +33,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
 main.home {
   padding-top: 100px;
   padding-bottom: 100px;
@@ -46,11 +44,12 @@ main.home img.logo {
   max-width: 400px;
 }
 
-main.home h3.title {
+main.home h1.title {
   color: #969696;
-  font-weight: 100;
+  font-weight: 400;
   text-transform: uppercase;
-  margin-bottom: 40px;
+  margin: 40px;
+  font-size: 100px;
 }
 
 main.home .button.login,

@@ -30,7 +30,11 @@ export default {
     SingleRecord
   },
   updated () {
+    // scroll down once only
     if (this.first_load) {
+      // work with chrome first
+      // firefox second
+      // document.documentElement.scrollTop = document.documentElement.scrollHeight
       document.body.scrollTop = document.body.scrollHeight
       this.first_load = false
     }
