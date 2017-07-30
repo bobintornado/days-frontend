@@ -22,6 +22,10 @@
         </div>
       </div>
     </div>
+
+    <footer class="flex">
+      <caption>this app is at pre-alpha stage. data may be deleted at anytime without any notice.</caption>
+    </footer>
   </main>
 </template>
 
