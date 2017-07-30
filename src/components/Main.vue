@@ -16,7 +16,7 @@
 
 <script>
 import { mapState, mapGetters, mapActions } from 'vuex'
-import RecordList from './records'
+import RecordList from './Records.vue'
 
 export default {
   name: 'days-app',
