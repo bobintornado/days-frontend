@@ -9,7 +9,7 @@ import store from '@/store/'
 import rx from 'feathers-reactive'
 import RxJS from 'rxjs'
 
-const socket = io('http://localhost:3000', {transports: ['websocket']})
+const socket = io('http://128.199.77.165/', {transports: ['websocket']})
 
 const feathersClient = feathers()
   .configure(hooks())
