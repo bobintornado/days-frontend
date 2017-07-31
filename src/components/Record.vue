@@ -6,7 +6,7 @@
       </div>
       <div class="flex flex-column col col-10">
         <!-- <textarea v-model="record.content"></textarea> -->
-        <medium-editor :text='record.content' :options='{ disableReturn: false }' custom-tag='h2' v-on:edit='applyTextEdit' :reuse-medium-editor-instance="false" class='medium-editor'>
+        <medium-editor :text='text' :options='{ disableReturn: false }' custom-tag='h2' v-on:edit='applyTextEdit' :reuse-medium-editor-instance="false" class='medium-editor'>
         </medium-editor>
       </div>
     </div>
@@ -23,6 +23,11 @@ export default {
   props: {
     record: Object,
     patchRecord: Function
+  },
+  data () {
+    return {
+      text: this.record.content
+    }
   },
   computed: {
     formattedDateWeekday () {
