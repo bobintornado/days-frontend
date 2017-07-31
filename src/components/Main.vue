@@ -28,7 +28,7 @@ export default {
       findRecordsInStore: 'find'
     }),
     records () {
-      return this.findRecordsInStore({query: { $sort: {createdAt: 1} }})
+      return this.findRecordsInStore({query: { $sort: {createdAt: -1} }})
     }
   },
   methods: {

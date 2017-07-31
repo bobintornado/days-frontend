@@ -65,7 +65,7 @@ export default {
 
 .medium-editor {
   font-size: 20px;
-  line-height: 4px;
+  line-height: 1.2em;
 }
 
 </style>
