@@ -1,8 +1,8 @@
 <template>
   <div class='footerActions'>
     <form class="flex flex-row" id="send-message" v-on:submit.prevent>
-      <button class="button-primary" type="submit" @click="addRecord">Pick A Day</button>
-      <button class="button-primary" type="submit" @click="addRecord">Record Today!</button>
+      <button class="button-primary" type="submit" @click="pickDate">Pick A Day</button>
+      <button class="button-primary" type="submit" @click="addTodayRecord">Record Today!</button>
       <button class="button-primary" type="submit" @click="logout">Log out</button>
       <caption> Current User {{ user.email }} </caption>
     </form>
@@ -11,6 +11,7 @@
 
 <script>
 import { mapActions, mapState } from 'vuex'
+import moment from 'moment'
 
 export default {
   name: 'RecordComposer',
@@ -23,12 +24,16 @@ export default {
     ])
   },
   methods: {
-    addRecord () {
-      this.createRecord({content: 'new day!', createdAt: new Date()})
+    addTodayRecord () {
+      const today = moment(new Date()).startOf('day')
+      this.createRecord({content: 'new day!', createdAt: today})
     },
     ...mapActions('auth', [
       'logout'
-    ])
+    ]),
+    pickDate () {
+      console.log('this')
+    }
   }
 }
 </script>
