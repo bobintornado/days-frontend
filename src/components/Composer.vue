@@ -32,7 +32,7 @@ export default {
       'logout'
     ]),
     pickDate () {
-      console.log('this')
+      alert('no implemented yet')
     }
   }
 }
