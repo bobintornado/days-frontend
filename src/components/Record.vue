@@ -55,7 +55,6 @@ export default {
 .formattedDate {
   font-family: 'Pacifico';
   font-size: 25px;
-  padding: 16px;
   line-height: 40px;
 }
 

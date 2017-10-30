@@ -1,22 +1,23 @@
 <template>
   <main id="container" class="">
     <header class="flex flex-row flex-1 clear">
-      <div class="flex flex-column col col-4 text-left">
+      <div class="flex flex-column col col-2 text-left">
         <button class="button-primary" type="submit" @click="addTodayRecord">Record Today</button>
       </div>
-      <div class="flex flex-column col col-4 text-center">
+      <div class="flex flex-column col col-8 text-center">
         <h1>INFINITE DAYS</h1>
       </div>
-      <div class="flex flex-column col col-4 text-right">
+      <div class="flex flex-column col col-2 text-right">
         <button class="button-primary" type="submit" @click="logout">Log out</button>
       </div>
     </header>
-      <div class="flex flex-row flex-1 clear" v-if="user" >  
-        <record-list :records="records.data"
-          :findRecords="findRecords"
-          :createRecord="createRecord"
-          :patchRecord="patchRecord"/>
-      </div>
+    <hr/>
+    <div class="flex flex-row flex-1 clear" v-if="user" >  
+      <record-list :records="records.data"
+        :findRecords="findRecords"
+        :createRecord="createRecord"
+        :patchRecord="patchRecord"/>
+    </div>
   </main>
 </template>
 
@@ -74,5 +75,9 @@ export default {
 
 #container {
   margin: 16px;
+}
+
+h1 {
+  font-size: 3em;
 }
 </style>
