@@ -1,8 +1,14 @@
 <template>
-  <main id="container" class="flex flex-column">
-    <header class="title-bar flex flex-row flex-center">
-      <div class="title-wrapper block center-element">
-        <h1>Infinite Days</h1> 
+  <main id="container" class="">
+    <header class="flex flex-row flex-1 clear">
+      <div class="flex flex-column col col-4 text-left">
+        <button class="button-primary" type="submit" @click="addTodayRecord">Record Today</button>
+      </div>
+      <div class="flex flex-column col col-4 text-center">
+        <h1>INFINITE DAYS</h1>
+      </div>
+      <div class="flex flex-column col col-4 text-right">
+        <button class="button-primary" type="submit" @click="logout">Log out</button>
       </div>
     </header>
       <div class="flex flex-row flex-1 clear" v-if="user" >  
@@ -17,6 +23,7 @@
 <script>
 import { mapState, mapGetters, mapActions } from 'vuex'
 import RecordList from './Records.vue'
+import moment from 'moment'
 
 export default {
   name: 'days-app',
@@ -29,6 +36,10 @@ export default {
     }),
     records () {
       return this.findRecordsInStore({query: { $sort: {createdAt: -1} }})
+    },
+    addTodayRecord () {
+      const today = moment(new Date()).startOf('day')
+      this.createRecord({content: 'new day!', createdAt: today})
     }
   },
   methods: {
@@ -58,3 +69,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+
+#container {
+  margin: 16px;
+}
+</style>

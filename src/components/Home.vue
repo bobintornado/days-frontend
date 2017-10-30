@@ -3,7 +3,7 @@
     <div class="row">
       <div class="text-center">
         <h1 class="title">Infinite Days</h1>
-        <span>Note down days and infinitely scrolling back</span>
+        <span>Single page diary</span>
       </div>
     </div>
 
