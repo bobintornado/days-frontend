@@ -37,10 +37,6 @@ export default {
     }),
     records () {
       return this.findRecordsInStore({query: { $sort: {createdAt: -1} }})
-    },
-    addTodayRecord () {
-      const today = moment(new Date()).startOf('day')
-      this.createRecord({content: 'new day!', createdAt: today})
     }
   },
   methods: {
@@ -51,7 +47,11 @@ export default {
     }),
     ...mapActions('auth', [
       'logout'
-    ])
+    ]),
+    addTodayRecord () {
+      const today = moment(new Date()).startOf('day')
+      this.createRecord({content: 'new day!', createdAt: today})
+    }
   },
   created () {
     if (!this.user) {
