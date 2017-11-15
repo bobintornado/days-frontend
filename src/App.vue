@@ -7,6 +7,8 @@
 <script>
 import '@/styles/base.css'
 import '@/styles/days.css'
+import '@/styles/medium-editor.min.css'
+import '@/styles/flat.min.css'
 
 export default {
   name: 'app',
