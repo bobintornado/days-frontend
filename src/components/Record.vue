@@ -1,3 +1,17 @@
+<style scoped>
+
+.formattedDate {
+  font-family: 'Pacifico';
+  font-size: 25px;
+  line-height: 40px;
+}
+
+.record {
+  margin: 8px auto;
+}
+
+</style>
+
 <template>
   <div>
     <div class="record flex flex-row" :id="record._id">
@@ -5,8 +19,7 @@
         {{ formattedDateWeekday }} <br/> {{ formattedDate }}
       </div>
       <div class="flex flex-column col col-10">
-        <!-- <textarea v-model="record.content"></textarea> -->
-        <medium-editor :text='text' :options='{ disableReturn: false }' custom-tag='h2' v-on:edit='applyTextEdit' :reuse-medium-editor-instance="false" class='medium-editor'>
+        <medium-editor :text='text' :options='editoptions' v-on:edit='applyTextEdit' :reuse-medium-editor-instance="false" class='medium-editor'>
         </medium-editor>
       </div>
     </div>
@@ -16,8 +29,13 @@
 
 <script>
 import { format } from 'date-fns/esm'
-// import autosize from 'autosize'
 import editor from 'vue2-medium-editor'
+
+const options = {
+  toolbar: {
+    buttons: ['bold', 'italic', 'underline', 'anchor', 'h1', 'h2', 'h3', 'quote', 'orderedlist', 'unorderedlist']
+  }
+}
 
 export default {
   props: {
@@ -26,7 +44,8 @@ export default {
   },
   data () {
     return {
-      text: this.record.content
+      text: this.record.content,
+      editoptions: options
     }
   },
   computed: {
@@ -49,22 +68,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-
-.formattedDate {
-  font-family: 'Pacifico';
-  font-size: 25px;
-  line-height: 40px;
-}
-
-.record {
-  margin: 8px auto;
-}
-
-.medium-editor {
-  font-size: 20px;
-  line-height: 1.2em;
-}
-
-</style>
