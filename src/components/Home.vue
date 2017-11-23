@@ -3,7 +3,7 @@
     <div class="row">
       <div class="text-center">
         <h1 class="title">Infinite Days</h1>
-        <span>Single page diary</span>
+        <span>Journaling for personal development</span>
       </div>
     </div>
 
