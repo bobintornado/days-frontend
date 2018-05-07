@@ -1,15 +1,14 @@
 import 'babel-polyfill'
-import feathers from 'feathers'
-import hooks from 'feathers-hooks'
-import socketio from 'feathers-socketio'
-import auth from 'feathers-authentication-client'
+import feathers from '@feathersjs/feathers'
+import socketio from '@feathersjs/socketio'
+import auth from '@feathersjs/authentication-client'
 import io from 'socket.io-client'
 import feathersVuex from 'feathers-vuex'
 import store from '@/store/'
 import rx from 'feathers-reactive'
 import RxJS from 'rxjs'
 
-const socket = io('http://localhost:3000', {transports: ['websocket']})
+const socket = io('https://infinitedays.life', {transports: ['websocket']})
 
 const feathersClient = feathers()
   .configure(hooks())
